@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion / Inscription - Proj-e-Deal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container container">
+            <a href="index.html" class="logo">Proj-<span>e</span>-Deal</a>
+            <nav>
+                <button class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="search.html">Explorer</a></li>
+                    <li><a href="project-details.html">Comment ça marche</a></li>
+                    <li><a href="login.html" class="btn btn-primary active">Connexion</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="auth-container">
+            <div class="auth-box">
+                <div class="auth-header">
+                    <h2>Bienvenue sur Proj-e-Deal</h2>
+                    <p>Connectez-vous ou créez un compte pour commencer</p>
+                </div>
+                
+                <!-- Auth Tabs -->
+                <div class="auth-tabs">
+                    <div class="auth-tab active" data-tab="login">Connexion</div>
+                    <div class="auth-tab" data-tab="register">Inscription</div>
+                </div>
+                
+                <!-- Login Form -->
+                <div class="auth-form" data-tab="login">
+                    <form id="login-form">
+                        <div class="form-group">
+                            <label for="login-email" class="form-label">Email</label>
+                            <input type="email" id="login-email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="login-password" class="form-label">Mot de passe</label>
+                            <input type="password" id="login-password" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-check">
+                            <input type="checkbox" id="remember-me" class="form-check-input">
+                            <label for="remember-me" class="form-check-label">Se souvenir de moi</label>
+                        </div>
+                        
+                        <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+                        
+                        <button type="submit" class="auth-submit">Se connecter</button>
+                    </form>
+                    
+                    <div class="auth-divider">
+                        <span>ou</span>
+                    </div>
+                    
+                    <div class="social-login">
+                        <a href="#" class="social-btn google">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href="#" class="social-btn facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-btn twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="auth-footer">
+                        <p>Nouveau sur Proj-e-Deal ? <a href="#" class="switch-auth" data-target="register">Créer un compte</a></p>
+                    </div>
+                </div>
+                
+                <!-- Register Form -->
+                <div class="auth-form" data-tab="register" style="display: none;">
+                    <form id="register-form">
+                        <div class="account-type-selector">
+                            <div class="type-card" data-type="buyer">
+                                <div class="type-icon"><i class="fas fa-shopping-bag"></i></div>
+                                <div class="type-title">Acheteur</div>
+                                <div class="type-desc">Je cherche à acquérir des projets</div>
+                            </div>
+                            <div class="type-card" data-type="seller">
+                                <div class="type-icon"><i class="fas fa-store"></i></div>
+                                <div class="type-title">Vendeur</div>
+                                <div class="type-desc">Je souhaite vendre mes projets</div>
+                            </div>
+                        </div>
+                        <input type="hidden" id="account-type" value="">
+                        
+                        <div class="form-group">
+                            <label for="register-name" class="form-label">Nom complet</label>
+                            <input type="text" id="register-name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="register-email" class="form-label">Email</label>
+                            <input type="email" id="register-email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="register-password" class="form-label">Mot de passe</label>
+                            <input type="password" id="register-password" class="form-control password-input" required>
+                            <div class="password-strength">
+                                <div class="strength-meter">
+                                    <div class="strength-meter-fill"></div>
+                                </div>
+                                <div class="strength-text"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="register-password-confirm" class="form-label">Confirmer le mot de passe</label>
+                            <input type="password" id="register-password-confirm" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-check">
+                            <input type="checkbox" id="terms" class="form-check-input" required>
+                            <label for="terms" class="form-check-label">J'accepte les <a href="#">Conditions d'utilisation</a> et la <a href="#">Politique de confidentialité</a></label>
+                        </div>
+                        
+                        <button type="submit" class="auth-submit">Créer mon compte</button>
+                    </form>
+                    
+                    <div class="auth-info">
+                        <p><i class="fas fa-info-circle"></i> En créant un compte, vous pourrez naviguer, sauvegarder vos favoris et contacter les vendeurs.</p>
+                    </div>
+                    
+                    <div class="auth-footer">
+                        <p>Déjà inscrit ? <a href="#" class="switch-auth" data-target="login">Se connecter</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Proj-e-Deal</h3>
+                    <p>La marketplace de référence pour l'achat et la vente de projets numériques clés en main.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Explorer</h3>
+                    <ul>
+                        <li><a href="search.html">Tous les projets</a></li>
+                        <li><a href="search.html?category=ecommerce">E-commerce</a></li>
+                        <li><a href="search.html?category=mobile">Applications mobiles</a></li>
+                        <li><a href="search.html?category=web">Sites web</a></li>
+                        <li><a href="search.html?category=saas">SaaS</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Ressources</h3>
+                    <ul>
+                        <li><a href="#">Comment ça marche</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Témoignages</a></li>
+                        <li><a href="#">Tarification</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Légal</h3>
+                    <ul>
+                        <li><a href="#">Conditions d'utilisation</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                        <li><a href="#">Mentions légales</a></li>
+                        <li><a href="#">RGPD</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="mailto:contact@projedeal.com">contact@projedeal.com</a></li>
+                        <li><a href="tel:+33123456789">+33 1 23 45 67 89</a></li>
+                        <li>
+                            <div class="social-icons">
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Proj-e-Deal. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

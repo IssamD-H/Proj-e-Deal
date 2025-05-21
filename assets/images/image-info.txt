@@ -1,0 +1,16 @@
+Ces fichiers sont des placeholders qui doivent être remplacés par de vraies images :
+
+1. project-1.jpg - Boutique e-commerce de mode
+2. project-2.jpg - Application mobile livraison locale
+3. project-3.jpg - Blog WordPress optimisé SEO
+4. project-4.jpg - Site vitrine pour restaurant
+5. project-5.jpg - Plateforme éducative LMS
+6. project-6.jpg - Application de gestion de stocks
+7. project-detail-2.jpg - Boutique e-commerce - Page produit
+8. project-detail-3.jpg - Boutique e-commerce - Panier
+9. project-detail-4.jpg - Boutique e-commerce - Mobile
+10. user-1.jpg - Photo de profil utilisateur (Sophie Marchand)
+11. user-2.jpg - Photo de profil utilisateur (Lucas Dubois)
+12. user-3.jpg - Photo de profil utilisateur (Emma Moreau)
+
+Pour générer ces images, vous pouvez utiliser n'importe quelle source d'images libres de droits comme Unsplash, Pexels, ou créer vos propres designs dans un logiciel comme Canva ou Photoshop.

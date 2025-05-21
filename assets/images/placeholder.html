@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Génération d'images</title>
+    <style>
+        canvas {
+            border: 1px solid #ddd;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Images générées pour Proj-e-Deal</h1>
+    <div id="container"></div>
+
+    <script>
+        // Fonction pour générer une couleur aléatoire
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        // Fonction pour dessiner des rectangles colorés
+        function drawRandomRectangles(ctx, width, height) {
+            // Fond
+            ctx.fillStyle = getRandomColor();
+            ctx.fillRect(0, 0, width, height);
+            
+            // 3-5 formes aléatoires
+            const numShapes = 3 + Math.floor(Math.random() * 3);
+            for (let i = 0; i < numShapes; i++) {
+                ctx.fillStyle = getRandomColor();
+                const x = Math.random() * width;
+                const y = Math.random() * height;
+                const w = 20 + Math.random() * (width / 2);
+                const h = 20 + Math.random() * (height / 2);
+                ctx.fillRect(x, y, w, h);
+            }
+            
+            // Ajouter du texte
+            ctx.fillStyle = '#FFFFFF';
+            ctx.font = 'bold 20px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('Proj-e-Deal', width/2, height/2);
+        }
+
+        // Générer plusieurs images
+        const container = document.getElementById('container');
+        const imageNames = [
+            'project-1.jpg', 'project-2.jpg', 'project-3.jpg', 
+            'project-4.jpg', 'project-5.jpg', 'project-6.jpg',
+            'project-detail-2.jpg', 'project-detail-3.jpg', 'project-detail-4.jpg',
+            'user-1.jpg', 'user-2.jpg', 'user-3.jpg'
+        ];
+        
+        imageNames.forEach((name, index) => {
+            const canvas = document.createElement('canvas');
+            canvas.width = 800;
+            canvas.height = 600;
+            container.appendChild(canvas);
+            
+            const ctx = canvas.getContext('2d');
+            drawRandomRectangles(ctx, canvas.width, canvas.height);
+            
+            // Ajouter le nom de l'image
+            const label = document.createElement('p');
+            label.textContent = name;
+            container.appendChild(label);
+            
+            // Lien pour télécharger
+            const link = document.createElement('a');
+            link.href = canvas.toDataURL('image/jpeg');
+            link.download = name;
+            link.textContent = 'Télécharger cette image';
+            container.appendChild(link);
+            
+            container.appendChild(document.createElement('hr'));
+        });
+    </script>
+</body>
+</html>
