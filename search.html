@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recherche de projets - Proj-e-Deal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/search.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container container">
+            <a href="index.html" class="logo">Proj-<span>e</span>-Deal</a>
+            <nav>
+                <button class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="search.html" class="active">Explorer</a></li>
+                    <li><a href="project-details.html">Comment ça marche</a></li>
+                    <li><a href="login.html" class="btn btn-primary">Connexion</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <h1>Recherche de projets</h1>
+            
+            <!-- Search Form -->
+            <form id="search-form" class="search-container">
+                <input type="text" id="search-input" class="search-input" placeholder="Recherchez par nom, description ou mots-clés...">
+                <button type="submit" class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+            
+            <!-- Search Results -->
+            <div class="search-page">
+                <!-- Filter Sidebar -->
+                <div class="filter-sidebar">
+                    <div class="filter-section">
+                        <h3 class="filter-title">Catégories</h3>
+                        <div class="filter-group">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="category-ecommerce" class="category-filter" value="e-commerce">
+                                <label for="category-ecommerce">E-commerce</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="category-mobile" class="category-filter" value="mobile">
+                                <label for="category-mobile">Applications Mobiles</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="category-web" class="category-filter" value="web">
+                                <label for="category-web">Sites Web</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="category-saas" class="category-filter" value="saas">
+                                <label for="category-saas">SaaS</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="category-content" class="category-filter" value="content">
+                                <label for="category-content">Content & Blogs</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="category-business" class="category-filter" value="business">
+                                <label for="category-business">Business & Finance</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h3 class="filter-title">Fourchette de prix</h3>
+                        <div class="filter-group">
+                            <div class="price-range">
+                                <input type="number" id="price-min" class="price-input" placeholder="Min MAD">
+                                <input type="number" id="price-max" class="price-input" placeholder="Max MAD">
+                            </div>
+                            <input type="range" class="range-slider" min="0" max="20000" value="10000">
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h3 class="filter-title">Statut</h3>
+                        <div class="filter-group">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="status-new" class="status-filter" value="new">
+                                <label for="status-new">Nouveaux projets</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="status-popular" class="status-filter" value="popular">
+                                <label for="status-popular">Projets populaires</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="status-verified" class="status-filter" value="verified">
+                                <label for="status-verified">Projets vérifiés</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h3 class="filter-title">Date d'ajout</h3>
+                        <div class="filter-group">
+                            <div class="checkbox-group">
+                                <input type="radio" name="date" id="date-any" class="date-filter" value="any" checked>
+                                <label for="date-any">Toutes les dates</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="radio" name="date" id="date-week" class="date-filter" value="week">
+                                <label for="date-week">Cette semaine</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="radio" name="date" id="date-month" class="date-filter" value="month">
+                                <label for="date-month">Ce mois-ci</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="radio" name="date" id="date-quarter" class="date-filter" value="quarter">
+                                <label for="date-quarter">Dernier trimestre</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-buttons">
+                        <button id="reset-filters" class="btn btn-secondary">Réinitialiser</button>
+                        <button id="apply-filters" class="btn btn-primary">Appliquer</button>
+                    </div>
+                </div>
+                
+                <!-- Results Area -->
+                <div class="search-results" id="search-results">
+                    <div class="search-header">
+                        <div class="results-count">6 projets trouvés</div>
+                        <div class="view-options">
+                            <div class="view-option view-grid active" title="Vue grille">
+                                <i class="fas fa-th"></i>
+                            </div>
+                            <div class="view-option view-list" title="Vue liste">
+                                <i class="fas fa-list"></i>
+                            </div>
+                            <div class="sort-by">
+                                <select class="sort-select">
+                                    <option value="newest">Plus récents</option>
+                                    <option value="oldest">Plus anciens</option>
+                                    <option value="price-high">Prix: décroissant</option>
+                                    <option value="price-low">Prix: croissant</option>
+                                    <option value="popular">Popularité</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="projects-grid" id="projects-grid">
+                        <!-- Project Cards will be inserted here by JavaScript -->
+                        <div class="card">
+                            <div class="card-img">
+                                <img src="assets/images/project-1.jpg" alt="Boutique e-commerce de mode">
+                                <div class="card-badge badge-popular">Populaire</div>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Boutique e-commerce de mode</h3>
+                                <div class="card-price">125 000 MAD</div>
+                                <div class="card-meta">
+                                    <span class="card-category">E-commerce</span>
+                                    <span class="card-date">15/10/2023</span>
+                                </div>
+                                <div class="card-actions">
+                                    <a href="project-details.html" class="btn btn-primary btn-sm">Voir le projet</a>
+                                    <button class="btn btn-tertiary favorite-btn" data-project-id="1">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-img">
+                                <img src="assets/images/project-2.jpg" alt="Application mobile livraison locale">
+                                <div class="card-badge badge-new">Nouveau</div>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Application mobile livraison locale</h3>
+                                <div class="card-price">89 000 MAD</div>
+                                <div class="card-meta">
+                                    <span class="card-category">Mobile</span>
+                                    <span class="card-date">05/11/2023</span>
+                                </div>
+                                <div class="card-actions">
+                                    <a href="project-details.html" class="btn btn-primary btn-sm">Voir le projet</a>
+                                    <button class="btn btn-tertiary favorite-btn" data-project-id="2">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-img">
+                                <img src="assets/images/project-3.jpg" alt="Blog WordPress optimisé SEO">
+                                <div class="card-badge badge-popular">Populaire</div>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Blog WordPress optimisé SEO</h3>
+                                <div class="card-price">25 000 MAD</div>
+                                <div class="card-meta">
+                                    <span class="card-category">Content</span>
+                                    <span class="card-date">22/09/2023</span>
+                                </div>
+                                <div class="card-actions">
+                                    <a href="project-details.html" class="btn btn-primary btn-sm">Voir le projet</a>
+                                    <button class="btn btn-tertiary favorite-btn" data-project-id="3">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-img">
+                                <img src="assets/images/project-4.jpg" alt="Site vitrine pour restaurant">
+                                <div class="card-badge badge-verified">Vérifié</div>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Site vitrine pour restaurant</h3>
+                                <div class="card-price">48 000 MAD</div>
+                                <div class="card-meta">
+                                    <span class="card-category">Web</span>
+                                    <span class="card-date">01/12/2023</span>
+                                </div>
+                                <div class="card-actions">
+                                    <a href="project-details.html" class="btn btn-primary btn-sm">Voir le projet</a>
+                                    <button class="btn btn-tertiary favorite-btn" data-project-id="4">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-img">
+                                <img src="assets/images/project-5.jpg" alt="Plateforme éducative LMS">
+                                <div class="card-badge badge-popular">Populaire</div>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Plateforme éducative LMS</h3>
+                                <div class="card-price">180 000 MAD</div>
+                                <div class="card-meta">
+                                    <span class="card-category">SaaS</span>
+                                    <span class="card-date">17/08/2023</span>
+                                </div>
+                                <div class="card-actions">
+                                    <a href="project-details.html" class="btn btn-primary btn-sm">Voir le projet</a>
+                                    <button class="btn btn-tertiary favorite-btn" data-project-id="5">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-img">
+                                <img src="assets/images/project-6.jpg" alt="Application de gestion de stocks">
+                                <div class="card-badge badge-verified">Vérifié</div>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Application de gestion de stocks</h3>
+                                <div class="card-price">75 000 MAD</div>
+                                <div class="card-meta">
+                                    <span class="card-category">Business</span>
+                                    <span class="card-date">20/10/2023</span>
+                                </div>
+                                <div class="card-actions">
+                                    <a href="project-details.html" class="btn btn-primary btn-sm">Voir le projet</a>
+                                    <button class="btn btn-tertiary favorite-btn" data-project-id="6">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <div class="page-item disabled">
+                            <a href="#" class="page-link">
+                                <i class="fas fa-chevron-left"></i>
+                            </a>
+                        </div>
+                        <div class="page-item">
+                            <a href="#" class="page-link active">1</a>
+                        </div>
+                        <div class="page-item">
+                            <a href="#" class="page-link">2</a>
+                        </div>
+                        <div class="page-item">
+                            <a href="#" class="page-link">3</a>
+                        </div>
+                        <div class="page-item">
+                            <a href="#" class="page-link">
+                                <i class="fas fa-chevron-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Proj-e-Deal</h3>
+                    <p>La marketplace de référence pour l'achat et la vente de projets numériques clés en main.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Explorer</h3>
+                    <ul>
+                        <li><a href="search.html">Tous les projets</a></li>
+                        <li><a href="search.html?category=ecommerce">E-commerce</a></li>
+                        <li><a href="search.html?category=mobile">Applications mobiles</a></li>
+                        <li><a href="search.html?category=web">Sites web</a></li>
+                        <li><a href="search.html?category=saas">SaaS</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Ressources</h3>
+                    <ul>
+                        <li><a href="#">Comment ça marche</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Témoignages</a></li>
+                        <li><a href="#">Tarification</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Légal</h3>
+                    <ul>
+                        <li><a href="#">Conditions d'utilisation</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                        <li><a href="#">Mentions légales</a></li>
+                        <li><a href="#">RGPD</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="mailto:contact@projedeal.com">contact@projedeal.com</a></li>
+                        <li><a href="tel:+33123456789">+33 1 23 45 67 89</a></li>
+                        <li>
+                            <div class="social-icons">
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Proj-e-Deal. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/search.js"></script>
+</body>
+</html>

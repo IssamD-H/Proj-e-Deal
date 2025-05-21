@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proj-e-Deal - Marketplace de projets en ligne</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container container">
+            <a href="index.html" class="logo">Proj-<span>e</span>-Deal</a>
+            <nav>
+                <button class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active">Accueil</a></li>
+                    <li><a href="search.html">Explorer</a></li>
+                    <li><a href="project-details.html">Comment ça marche</a></li>
+                    <li><a href="login.html" class="btn btn-primary">Connexion</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Trouvez le projet idéal, concrétisez vos ambitions</h1>
+                    <p>La première marketplace dédiée à l'achat-vente de projets clés en main</p>
+                    <div class="hero-search">
+                        <form action="search.html" method="get">
+                            <div class="search-container">
+                                <input type="text" class="search-input" placeholder="Quel type de projet recherchez-vous ?">
+                                <button type="submit" class="search-btn">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="categories">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Explorez par catégorie</h2>
+                    <p>Découvrez une variété de projets dans nos catégories populaires</p>
+                </div>
+                <div class="category-grid">
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h3 class="category-name">E-commerce</h3>
+                        <div class="category-count">142 projets</div>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="category-name">Applications Mobiles</h3>
+                        <div class="category-count">89 projets</div>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3 class="category-name">Sites Web</h3>
+                        <div class="category-count">215 projets</div>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3 class="category-name">SaaS</h3>
+                        <div class="category-count">63 projets</div>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-pencil-alt"></i>
+                        </div>
+                        <h3 class="category-name">Content & Blogs</h3>
+                        <div class="category-count">78 projets</div>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="category-name">Business & Finance</h3>
+                        <div class="category-count">45 projets</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects -->
+        <section class="featured-projects">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Projets en vedette</h2>
+                    <p>Les projets les plus populaires sur notre plateforme</p>
+                </div>
+                <div class="project-carousel">
+                    <div class="carousel-container">
+                        <div class="carousel-track">
+                            <div class="carousel-item">
+                                <div class="card">
+                                    <div class="card-img">
+                                        <img src="assets/images/project-1.jpg" alt="E-commerce de mode">
+                                        <div class="card-badge badge-popular">Populaire</div>
+                                    </div>
+                                    <div class="card-content">
+                                        <h3 class="card-title">Boutique e-commerce de mode</h3>
+                                        <div class="card-price">125 000 MAD</div>
+                                        <div class="card-meta">
+                                            <span class="card-category">E-commerce</span>
+                                            <span class="card-date">Il y a 3 jours</span>
+                                        </div>
+                                        <div class="card-actions">
+                                            <a href="project-details.html" class="btn btn-primary btn-sm">Voir le projet</a>
+                                            <button class="btn btn-tertiary favorite-btn" data-project-id="1">
+                                                <i class="far fa-heart"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card">
+                                    <div class="card-img">
+                                        <img src="assets/images/project-2.jpg" alt="Application mobile de livraison">
+                                        <div class="card-badge badge-new">Nouveau</div>
+                                    </div>
+                                    <div class="card-content">
+                                        <h3 class="card-title">Application mobile livraison locale</h3>
+                                        <div class="card-price">89 000 MAD</div>
+                                        <div class="card-meta">
+                                            <span class="card-category">Mobile</span>
+                                            <span class="card-date">Il y a 1 jour</span>
+                                        </div>
+                                        <div class="card-actions">
+                                            <a href="project-details.html" class="btn btn-primary btn-sm">Voir le projet</a>
+                                            <button class="btn btn-tertiary favorite-btn" data-project-id="2">
+                                                <i class="far fa-heart"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card">
+                                    <div class="card-img">
+                                        <img src="assets/images/project-3.jpg" alt="Blog WordPress">
+                                        <div class="card-badge badge-popular">Populaire</div>
+                                    </div>
+                                    <div class="card-content">
+                                        <h3 class="card-title">Blog WordPress optimisé SEO</h3>
+                                        <div class="card-price">25 000 MAD</div>
+                                        <div class="card-meta">
+                                            <span class="card-category">Content</span>
+                                            <span class="card-date">Il y a 5 jours</span>
+                                        </div>
+                                        <div class="card-actions">
+                                            <a href="project-details.html" class="btn btn-primary btn-sm">Voir le projet</a>
+                                            <button class="btn btn-tertiary favorite-btn" data-project-id="3">
+                                                <i class="far fa-heart"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card">
+                                    <div class="card-img">
+                                        <img src="assets/images/project-4.jpg" alt="Site vitrine restaurant">
+                                        <div class="card-badge badge-verified">Vérifié</div>
+                                    </div>
+                                    <div class="card-content">
+                                        <h3 class="card-title">Site vitrine pour restaurant</h3>
+                                        <div class="card-price">48 000 MAD</div>
+                                        <div class="card-meta">
+                                            <span class="card-category">Web</span>
+                                            <span class="card-date">Il y a 2 jours</span>
+                                        </div>
+                                        <div class="card-actions">
+                                            <a href="project-details.html" class="btn btn-primary btn-sm">Voir le projet</a>
+                                            <button class="btn btn-tertiary favorite-btn" data-project-id="4">
+                                                <i class="far fa-heart"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card">
+                                    <div class="card-img">
+                                        <img src="assets/images/project-5.jpg" alt="Plateforme éducative">
+                                        <div class="card-badge badge-popular">Populaire</div>
+                                    </div>
+                                    <div class="card-content">
+                                        <h3 class="card-title">Plateforme éducative LMS</h3>
+                                        <div class="card-price">180 000 MAD</div>
+                                        <div class="card-meta">
+                                            <span class="card-category">SaaS</span>
+                                            <span class="card-date">Il y a 4 jours</span>
+                                        </div>
+                                        <div class="card-actions">
+                                            <a href="project-details.html" class="btn btn-primary btn-sm">Voir le projet</a>
+                                            <button class="btn btn-tertiary favorite-btn" data-project-id="5">
+                                                <i class="far fa-heart"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-controls">
+                        <button class="carousel-btn carousel-prev">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <div class="carousel-indicators">
+                            <div class="carousel-dot active"></div>
+                            <div class="carousel-dot"></div>
+                            <div class="carousel-dot"></div>
+                        </div>
+                        <button class="carousel-btn carousel-next">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Ce que disent nos utilisateurs</h2>
+                    <p>Découvrez les expériences de nos acheteurs et vendeurs</p>
+                </div>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            "J'ai trouvé le site e-commerce parfait pour mon business. La transition a été facile et le support a été excellent. Merci Proj-e-Deal !"
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-img">
+                                <img src="assets/images/user-1.jpg" alt="Sophie Marchand">
+                            </div>
+                            <div class="testimonial-author-info">
+                                <h4>Sophie Marchand</h4>
+                                <p>Acheteur / Business Owner</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            "J'ai vendu mon projet SaaS en moins de 3 semaines ! Le processus était transparent et j'ai reçu un prix équitable."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-img">
+                                <img src="assets/images/user-2.jpg" alt="Lucas Dubois">
+                            </div>
+                            <div class="testimonial-author-info">
+                                <h4>Lucas Dubois</h4>
+                                <p>Vendeur / Développeur</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            "La plateforme a révolutionné la façon dont je développe des projets. Maintenant, je sais qu'il existe un marché viable pour mes créations."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-author-img">
+                                <img src="assets/images/user-3.jpg" alt="Emma Moreau">
+                            </div>
+                            <div class="testimonial-author-info">
+                                <h4>Emma Moreau</h4>
+                                <p>Vendeuse / Designer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics -->
+        <section class="statistics">
+            <div class="container">
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="1500">0</div>
+                        <div class="stat-label">Projets actifs</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="850">0</div>
+                        <div class="stat-label">Transactions réussies</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="5000">0</div>
+                        <div class="stat-label">Utilisateurs</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="12">0</div>
+                        <div class="stat-label">Catégories</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-container">
+                    <div class="section-title">
+                        <h2>Prêt à rejoindre la communauté ?</h2>
+                        <p>Que vous soyez acheteur ou vendeur, Proj-e-Deal simplifie vos projets numériques</p>
+                    </div>
+                    <div class="cta-boxes">
+                        <div class="cta-box">
+                            <div class="cta-box-icon">
+                                <i class="fas fa-shopping-bag"></i>
+                            </div>
+                            <h3>Acheter un projet</h3>
+                            <p>Lancez votre activité rapidement avec des projets testés et prêts à l'emploi.</p>
+                            <div class="cta-features">
+                                <div class="cta-feature">
+                                    <div class="cta-feature-icon"><i class="fas fa-check"></i></div>
+                                    <div>Projets vérifiés</div>
+                                </div>
+                                <div class="cta-feature">
+                                    <div class="cta-feature-icon"><i class="fas fa-check"></i></div>
+                                    <div>Support de transfert</div>
+                                </div>
+                                <div class="cta-feature">
+                                    <div class="cta-feature-icon"><i class="fas fa-check"></i></div>
+                                    <div>Paiement sécurisé</div>
+                                </div>
+                            </div>
+                            <a href="login.html" class="btn btn-primary">Commencer à explorer</a>
+                        </div>
+                        <div class="cta-box">
+                            <div class="cta-box-icon">
+                                <i class="fas fa-hand-holding-usd"></i>
+                            </div>
+                            <h3>Vendre un projet</h3>
+                            <p>Convertissez vos projets en revenus et touchez des acheteurs qualifiés.</p>
+                            <div class="cta-features">
+                                <div class="cta-feature">
+                                    <div class="cta-feature-icon"><i class="fas fa-check"></i></div>
+                                    <div>Commission réduite</div>
+                                </div>
+                                <div class="cta-feature">
+                                    <div class="cta-feature-icon"><i class="fas fa-check"></i></div>
+                                    <div>Assistance à la valorisation</div>
+                                </div>
+                                <div class="cta-feature">
+                                    <div class="cta-feature-icon"><i class="fas fa-check"></i></div>
+                                    <div>Plateforme de transaction</div>
+                                </div>
+                            </div>
+                            <a href="login.html" class="btn btn-primary">Créer un compte vendeur</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Proj-e-Deal</h3>
+                    <p>La marketplace de référence pour l'achat et la vente de projets numériques clés en main.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Explorer</h3>
+                    <ul>
+                        <li><a href="search.html">Tous les projets</a></li>
+                        <li><a href="search.html?category=ecommerce">E-commerce</a></li>
+                        <li><a href="search.html?category=mobile">Applications mobiles</a></li>
+                        <li><a href="search.html?category=web">Sites web</a></li>
+                        <li><a href="search.html?category=saas">SaaS</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Ressources</h3>
+                    <ul>
+                        <li><a href="#">Comment ça marche</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Témoignages</a></li>
+                        <li><a href="#">Tarification</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Légal</h3>
+                    <ul>
+                        <li><a href="#">Conditions d'utilisation</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                        <li><a href="#">Mentions légales</a></li>
+                        <li><a href="#">RGPD</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="mailto:contact@projedeal.com">contact@projedeal.com</a></li>
+                        <li><a href="tel:+33123456789">+33 1 23 45 67 89</a></li>
+                        <li>
+                            <div class="social-icons">
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Proj-e-Deal. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/home.js"></script>
+</body>
+</html>
